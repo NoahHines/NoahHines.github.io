@@ -5,50 +5,10 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2015-06-05T19:00:00-05:00</updated>
+  <updated>2014-08-05T19:00:00-05:00</updated>
   <author>
     <name>Blog Author</name>
   </author>
-  <entry>
-    <title>Chartholdr.io is live</title>
-    <link rel="alternate" href="http://blog.url.com/2015/06/06/chartholdr.html"/>
-    <id>http://blog.url.com/2015/06/06/chartholdr.html</id>
-    <published>2015-06-05T19:00:00-05:00</published>
-    <updated>2015-06-16T21:54:16-05:00</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;I remember the first time I stumbled across Placehold.it, a simple image placeholder that shows a gray image with text indicating the width and height of the image.
-lorem!&lt;/p&gt;
-
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti perferendis incidunt debitis excepturi soluta impedit aliquam eveniet a corporis iure obcaecati vitae, nemo porro minima explicabo reiciendis, minus earum temporibus.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ipsa ducimus eaque placeat, fugiat nesciunt doloribus odit distinctio expedita fugit aut sapiente, quod voluptate velit doloremque explicabo tempora obcaecati quisquam.
-
-&lt;img alt="Chartholdr pie graph" height="200px" width="200px" src="http://chartholdr.io/pie/200" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus odit explicabo maxime quidem aliquid, nemo necessitatibus quis quisquam doloribus. Explicabo, impedit magnam perspiciatis tenetur quasi id praesentium esse, reprehenderit dolorem.&lt;/p&gt;
-
-&lt;h2 id="how-it-works"&gt;How it works&lt;/h2&gt;
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia ea fugiat eaque tempore, dicta sint. Deserunt officiis error dolorum quisquam autem inventore, illo ipsum voluptas repudiandae laborum perspiciatis illum, ea.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="language-ruby"&gt;it "will be correct size" do
-	pie_gen = Generator.new(Chart.new("pie", 400, 400))
-	FastImage.size(pie_gen.get)[0].should == 400
-	FastImage.size(pie_gen.get)[1].should == 400
-	bar_gen = Generator.new(Chart.new("bar", 505, 500))
-	FastImage.size(bar_gen.get)[0].should == 505
-	FastImage.size(bar_gen.get)[1].should == 500
-	line_gen = Generator.new(Chart.new("line", 700, 200))
-	FastImage.size(line_gen.get)[0].should == 700
-	FastImage.size(line_gen.get)[1].should == 200
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id="challenges"&gt;Challenges&lt;/h2&gt;
-
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid accusantium eius deleniti minima consectetur neque, architecto praesentium ipsa maxime a reiciendis libero omnis, quos facilis temporibus ratione quibusdam facere cupiditate.&lt;/p&gt;
-
-</content>
-  </entry>
   <entry>
     <title>Union Pacific Hackathon</title>
     <link rel="alternate" href="http://blog.url.com/2014/08/06/union-pacific-hackathon.html"/>
