@@ -5,16 +5,52 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2014-08-05T19:00:00-05:00</updated>
+  <updated>2015-07-11T19:00:00-05:00</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>How Chartholdr Works</title>
+    <link rel="alternate" href="http://blog.url.com/2015/07/12/chartholdr.html"/>
+    <id>http://blog.url.com/2015/07/12/chartholdr.html</id>
+    <published>2015-07-11T19:00:00-05:00</published>
+    <updated>2015-07-12T16:37:22-05:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;I remember the first time I stumbled across Placehold.it, a simple image placeholder serving gray rectangles with text indicating the width and height. Immediately, I wondered how the site was able to deliver an infinite number of custom images. Do they generate all their images on the fly? Do they cache the images on the server?&lt;/p&gt;
+
+&lt;p&gt;I can't attest to Placehold.it's serverside logic, but I can give a technical overview of the image placeholder I built to learn how an image placeholder can work.&lt;/p&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos blanditiis cum iure fuga distinctio est totam architecto in repudiandae error magnam tenetur, dicta deleniti quia fugiat molestiae sit natus aut.&lt;/p&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi hic deleniti amet vero dolor quas, unde animi eaque. Dolores hic deserunt totam eligendi, libero sunt animi recusandae debitis esse quia?
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit alias illo labore veritatis nam, necessitatibus, eligendi explicabo adipisci dignissimos autem vel suscipit repellat eaque officiis consequuntur deleniti? Ab, est.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur quos quo dolores iste unde, beatae consectetur, sunt quaerat. Sed, possimus deleniti. Maiores fugit ducimus alias impedit voluptas tempora qui eligendi.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="Chartholdr pie graph" src="http://chartholdr.io/pie/200" /&gt;&lt;/p&gt;
+
+&lt;h2 id="how-it-works"&gt;How it works&lt;/h2&gt;
+&lt;p&gt;Chartholdr is built with the Ruby on Rails framework. Taking advantage of the MVC routing, I grab the graph type, width, height (optional), and color (optional) all from one URL comprised of the following syntax.
+&lt;code&gt;
+http://chartholdr.io/bar/1000/500/c=9d5ddd
+&lt;/code&gt;
+The routes.rb calls the Application Controller which handles creating the generator and calling the send_data method which sends the inline png file. The generator's constructor takes in the chart object so it knows which templates to use when rendering. If the image isn't already cached in the  public folder, the generator's get method initializes PhantomJS, renders the JS chart, saves the image to the public folder and then returns the file location.
+&lt;code&gt;ruby
+bar = Chart.new("bar", @width, @height, @color)
+		generator = Generator.new(bar, @force_cache)
+		send_data(File.open(generator.get).read, :type =&amp;gt; "image/png", :disposition =&amp;gt; 'inline')
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid accusantium eius deleniti minima consectetur neque, architecto praesentium ipsa maxime a reiciendis libero omnis, quos facilis temporibus ratione quibusdam facere cupiditate.&lt;/p&gt;
+
+</content>
+  </entry>
   <entry>
     <title>Union Pacific Hackathon</title>
     <link rel="alternate" href="http://blog.url.com/2014/08/06/union-pacific-hackathon.html"/>
     <id>http://blog.url.com/2014/08/06/union-pacific-hackathon.html</id>
     <published>2014-08-05T19:00:00-05:00</published>
-    <updated>2015-06-06T18:31:06-05:00</updated>
+    <updated>2015-07-12T16:32:17-05:00</updated>
     <author>
       <name>Article Author</name>
     </author>

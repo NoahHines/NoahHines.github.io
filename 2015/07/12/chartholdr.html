@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
-  <title>Noah's Blog</title>
+  <title>Noah's Blog - How Chartholdr Works</title>
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/foundation.css">
@@ -51,14 +51,30 @@
   <br>
   <div class="row">
     <div class="large-9 columns" role="content">
-      <h1>Archive for
-    2014
-</h1>
+      <p>I remember the first time I stumbled across Placehold.it, a simple image placeholder serving gray rectangles with text indicating the width and height. Immediately, I wondered how the site was able to deliver an infinite number of custom images. Do they generate all their images on the fly? Do they cache the images on the server?</p>
 
+<p>I can't attest to Placehold.it's serverside logic, but I can give a technical overview of the image placeholder I built to learn how an image placeholder can work.</p>
 
-<ul>
-    <li><a href="/2014/08/06/union-pacific-hackathon.html">Union Pacific Hackathon</a> <span>Aug  6</span></li>
-</ul>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos blanditiis cum iure fuga distinctio est totam architecto in repudiandae error magnam tenetur, dicta deleniti quia fugiat molestiae sit natus aut.</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi hic deleniti amet vero dolor quas, unde animi eaque. Dolores hic deserunt totam eligendi, libero sunt animi recusandae debitis esse quia?
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit alias illo labore veritatis nam, necessitatibus, eligendi explicabo adipisci dignissimos autem vel suscipit repellat eaque officiis consequuntur deleniti? Ab, est.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur quos quo dolores iste unde, beatae consectetur, sunt quaerat. Sed, possimus deleniti. Maiores fugit ducimus alias impedit voluptas tempora qui eligendi.</p>
+
+<p><img alt="Chartholdr pie graph" src="http://chartholdr.io/pie/200" /></p>
+
+<h2 id="how-it-works">How it works</h2>
+<p>Chartholdr is built with the Ruby on Rails framework. Taking advantage of the MVC routing, I grab the graph type, width, height (optional), and color (optional) all from one URL comprised of the following syntax.
+<code>
+http://chartholdr.io/bar/1000/500/c=9d5ddd
+</code>
+The routes.rb calls the Application Controller which handles creating the generator and calling the send_data method which sends the inline png file. The generator's constructor takes in the chart object so it knows which templates to use when rendering. If the image isn't already cached in the  public folder, the generator's get method initializes PhantomJS, renders the JS chart, saves the image to the public folder and then returns the file location.
+<code>ruby
+bar = Chart.new("bar", @width, @height, @color)
+		generator = Generator.new(bar, @force_cache)
+		send_data(File.open(generator.get).read, :type =&gt; "image/png", :disposition =&gt; 'inline')
+</code></p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid accusantium eius deleniti minima consectetur neque, architecto praesentium ipsa maxime a reiciendis libero omnis, quos facilis temporibus ratione quibusdam facere cupiditate.</p>
 
 
     </div>
