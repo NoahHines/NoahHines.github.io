@@ -49,32 +49,51 @@
 
   <!-- Blog view -->
   <br>
-  <div class="row">
+  <div class="row blog-content">
     <div class="large-9 columns" role="content">
-      <p>I remember the first time I stumbled across Placehold.it, a simple image placeholder serving gray rectangles with text indicating the width and height. Immediately, I wondered how the site was able to deliver an infinite number of custom images. Do they generate all their images on the fly? Do they cache the images on the server?</p>
+        <h2>How Chartholdr Works <small>Jul 12, 2015</small></h2>
+      <p><img alt="Chartholdr pie graph" src="http://chartholdr.io/pie/200" /></p>
 
-<p>I can't attest to Placehold.it's serverside logic, but I can give a technical overview of the image placeholder I built to learn how an image placeholder can work.</p>
+<p>I remember the first time I stumbled across Placehold.it, a simple image placeholder serving plain images with text indicating the width and height. Immediately, I wondered how the site was able to deliver images with the illusion they always existed on the server.</p>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos blanditiis cum iure fuga distinctio est totam architecto in repudiandae error magnam tenetur, dicta deleniti quia fugiat molestiae sit natus aut.</p>
+<p>A basic image placeholder could be made by generating the images once and leaving them on the server at the appropriate URL.</p>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi hic deleniti amet vero dolor quas, unde animi eaque. Dolores hic deserunt totam eligendi, libero sunt animi recusandae debitis esse quia?
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit alias illo labore veritatis nam, necessitatibus, eligendi explicabo adipisci dignissimos autem vel suscipit repellat eaque officiis consequuntur deleniti? Ab, est.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur quos quo dolores iste unde, beatae consectetur, sunt quaerat. Sed, possimus deleniti. Maiores fugit ducimus alias impedit voluptas tempora qui eligendi.</p>
+<p>For instance, you could write a script that generates images between 1x1 and 1000x1000 and save them to the server's www/ folder. This would require no serverside logic, but it would be a huge waste of disk space, since there's a high chance most of the images will never be needed.</p>
 
-<p><img alt="Chartholdr pie graph" src="http://chartholdr.io/pie/200" /></p>
+<p>I can't attest to Placehold.it's serverside logic, but I can give a technical overview of how the image placeholder I built handles dynamic image rendering and serverside caching.
+</p>
 
-<h2 id="how-it-works">How it works</h2>
-<p>Chartholdr is built with the Ruby on Rails framework. Taking advantage of the MVC routing, I grab the graph type, width, height (optional), and color (optional) all from one URL comprised of the following syntax.
-<code>
+<h2 id="routes">Routes</h2>
+<p>Taking advantage of the Ruby on Rails router, I grab the graph type, width, height (optional), and color (optional) all from one URL comprised of the following syntax.</p>
+
+<p><code>
 http://chartholdr.io/bar/1000/500/c=9d5ddd
 </code>
-The routes.rb calls the Application Controller which handles creating the generator and calling the send_data method which sends the inline png file. The generator's constructor takes in the chart object so it knows which templates to use when rendering. If the image isn't already cached in the  public folder, the generator's get method initializes PhantomJS, renders the JS chart, saves the image to the public folder and then returns the file location.
-<code>ruby
-bar = Chart.new("bar", @width, @height, @color)
-		generator = Generator.new(bar, @force_cache)
-		send_data(File.open(generator.get).read, :type =&gt; "image/png", :disposition =&gt; 'inline')
-</code></p>
+The routes.rb calls the Application Controller which initializes the generator object and sends the inline png file.</p>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid accusantium eius deleniti minima consectetur neque, architecto praesentium ipsa maxime a reiciendis libero omnis, quos facilis temporibus ratione quibusdam facere cupiditate.</p>
+<p>The generator's constructor takes in the chart object so it knows which templates to use when rendering. If the image isn't already cached in the  public folder, the generator's get method initializes PhantomJS, renders the JS chart, saves the image to the public folder and then returns the file location.</p>
+
+<p>Originally, I put most of the logic in the application controller. When I realized I wanted to generate multiple chart types, however, I decided to make the process modular. As you can tell, I took advantage of abstraction whenever I could.</p>
+
+<p><code>Router ---&gt; Application Controller ---&gt; Generator ---&gt; Chart</code></p>
+
+<h2 id="rendering">Rendering</h2>
+
+<p>I used Zurb's Pizza Amore pie library to generate the charts. While there are more sophisticated libraries out there such d3, I chose Pizza.js because it is lightweight and its simple charts are perfect for placeholder lorem ipsum.</p>
+
+<p>I knew I needed a headless browser to generate the charts. PhantomJS was the obvious choice since it has built-in svg support as well as the ability to take screenshots.</p>
+
+<h2 id="caching">Caching</h2>
+
+<p>I first thought about setting up an E3 database to go with my Elastic Beanstalk instance. But why use a database when I could just place the images in the public folder? So that's what I did.</p>
+
+<p>Let's say I went to the url <code>localhost:3000/pie/300</code></p>
+
+<p>If this image has not been generated before, the url is converted to a path and passed into PhantomJS where it will be saved to the public folder. If the image already exists, the application controller calls the send_data method and sends the image located at the converted url path, in this case, <code>public/pie/300/300</code>.</p>
+
+<h2 id="the-source">The Source</h2>
+
+<p>I had a blast working on this project, and I do have plans to continue working on it. If you'd like to contribute, the project is open source on <a href="https://github.com/NoahHines/Chartholdr">github</a>.</p>
 
 
     </div>
@@ -88,7 +107,7 @@ bar = Chart.new("bar", @width, @height, @color)
               <a href="http://twitter.com/NoahTrust"><i class="fi-social-twitter"></i></a>
               <a href="https://www.linkedin.com/pub/noah-hines/54/934/725"><i class="fi-social-linkedin"></i></a>
             </div>
-            <p class="text-center">My name is Noah Hines and I love problem solving. I work with a team of developers called BrainStorm Trust building responsive web apps. I also enjoy playing guitar and exercising.</p>
+            <p class="text-center">My name is Noah Hines and I love solving problems. I work with a team of developers called BrainStorm Trust building responsive web apps. I also enjoy playing guitar and exercising.</p>
           </div>
         </div>
 

@@ -26,7 +26,6 @@
 </head>
 <body>
 
-
   <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
       <li class="name">
@@ -50,9 +49,27 @@
 
   <!-- Blog view -->
   <br>
-  <div class="row">
+  <div class="row blog-content">
     <div class="large-9 columns" role="content">
       
+<article>
+  <h2><a href="/2015/07/12/chartholdr.html">How Chartholdr Works</a> <small>Jul 12, 2015</small></h2>
+  <!-- use article.summary(250) if you have Nokogiri available to show just
+       the first 250 characters -->
+  <p><img alt="Chartholdr pie graph" src="http://chartholdr.io/pie/200" /></p>
+
+<p>I remember the first time I stumbled across Placehold.it, a simple image placeholder serving plain images with text indicating the width and height. Immediately, I wondered how the site was able to deliver images with the illusion they always existed on the server.</p>
+
+<p>A basic image placeholder could be made by generating the images once and leaving them on the server at the appropriate URL.</p>
+
+<p>For instance, you could write a script that generates images between 1x1 and 1000x1000 and save them to the server's www/ folder. This would require no serverside logic, but it would be a huge waste of disk space, since there's a high chance most of the images will never be needed.</p>
+
+<p>I can't attest to Placehold.it's serverside logic, but I can give a technical overview of how the image placeholder I built handles dynamic image rendering and serverside caching.
+
+  <a href="/2015/07/12/chartholdr.html">Read more...</a>
+</article>
+<hr>
+<br>
 <article>
   <h2><a href="/2014/08/06/union-pacific-hackathon.html">Union Pacific Hackathon</a> <small>Aug  6, 2014</small></h2>
   <!-- use article.summary(250) if you have Nokogiri available to show just
@@ -79,7 +96,7 @@
               <a href="http://twitter.com/NoahTrust"><i class="fi-social-twitter"></i></a>
               <a href="https://www.linkedin.com/pub/noah-hines/54/934/725"><i class="fi-social-linkedin"></i></a>
             </div>
-            <p class="text-center">My name is Noah Hines and I love problem solving. I work with a team of developers called BrainStorm Trust building responsive web apps. I also enjoy playing guitar and exercising.</p>
+            <p class="text-center">My name is Noah Hines and I love solving problems. I work with a team of developers called BrainStorm Trust building responsive web apps. I also enjoy playing guitar and exercising.</p>
           </div>
         </div>
 
@@ -87,16 +104,22 @@
       <aside>
         <h3>Blog Posts</h3>
         <ol>
+          <li><a href="/2015/07/12/chartholdr.html">How Chartholdr Works</a> <span>Jul 12</span></li>
           <li><a href="/2014/08/06/union-pacific-hackathon.html">Union Pacific Hackathon</a> <span>Aug  6</span></li>
         </ol>
 
         <h3>Tags</h3>
         <ol>
           <li><a href="/tags/hackathon-union-pacific.html">hackathon union pacific (1)</a></li>
+          <li><a href="/tags/image-placeholder.html">image placeholder (1)</a></li>
+          <li><a href="/tags/foundation.html">foundation (1)</a></li>
+          <li><a href="/tags/ruby-on-rails.html">ruby on rails (1)</a></li>
+          <li><a href="/tags/brainstorm-trust.html">brainstorm trust (1)</a></li>
         </ol>
 
         <h3>By Year</h3>
         <ol>
+          <li><a href="/2015.html">2015 (1)</a></li>
           <li><a href="/2014.html">2014 (1)</a></li>
         </ol>
       </aside>
