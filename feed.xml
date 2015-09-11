@@ -5,7 +5,7 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2015-07-11T19:00:00-05:00</updated>
+  <updated>2015-07-11T20:00:00-04:00</updated>
   <author>
     <name>Blog Author</name>
   </author>
@@ -13,8 +13,8 @@
     <title>How Chartholdr Works</title>
     <link rel="alternate" href="http://blog.url.com/2015/07/12/chartholdr.html"/>
     <id>http://blog.url.com/2015/07/12/chartholdr.html</id>
-    <published>2015-07-11T19:00:00-05:00</published>
-    <updated>2015-07-26T14:08:39-05:00</updated>
+    <published>2015-07-11T20:00:00-04:00</published>
+    <updated>2015-07-26T15:08:39-04:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -67,8 +67,8 @@ The routes.rb calls the Application Controller which initializes the generator o
     <title>Union Pacific Hackathon</title>
     <link rel="alternate" href="http://blog.url.com/2014/08/06/union-pacific-hackathon.html"/>
     <id>http://blog.url.com/2014/08/06/union-pacific-hackathon.html</id>
-    <published>2014-08-05T19:00:00-05:00</published>
-    <updated>2015-07-12T16:32:17-05:00</updated>
+    <published>2014-08-05T20:00:00-04:00</published>
+    <updated>2015-07-12T17:32:17-04:00</updated>
     <author>
       <name>Article Author</name>
     </author>
