@@ -5,47 +5,61 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2015-06-05T19:00:00-05:00</updated>
+  <updated>2015-07-11T20:00:00-04:00</updated>
   <author>
     <name>Blog Author</name>
   </author>
   <entry>
-    <title>Chartholdr.io is live</title>
-    <link rel="alternate" href="http://blog.url.com/2015/06/06/chartholdr.html"/>
-    <id>http://blog.url.com/2015/06/06/chartholdr.html</id>
-    <published>2015-06-05T19:00:00-05:00</published>
-    <updated>2015-06-16T21:54:16-05:00</updated>
+    <title>How Chartholdr Works</title>
+    <link rel="alternate" href="http://blog.url.com/2015/07/12/chartholdr.html"/>
+    <id>http://blog.url.com/2015/07/12/chartholdr.html</id>
+    <published>2015-07-11T20:00:00-04:00</published>
+    <updated>2015-07-26T15:08:39-04:00</updated>
     <author>
       <name>Article Author</name>
     </author>
-    <content type="html">&lt;p&gt;I remember the first time I stumbled across Placehold.it, a simple image placeholder that shows a gray image with text indicating the width and height of the image.
-lorem!&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img alt="Chartholdr pie graph" src="http://chartholdr.io/pie/200" /&gt;&lt;/p&gt;
 
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti perferendis incidunt debitis excepturi soluta impedit aliquam eveniet a corporis iure obcaecati vitae, nemo porro minima explicabo reiciendis, minus earum temporibus.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ipsa ducimus eaque placeat, fugiat nesciunt doloribus odit distinctio expedita fugit aut sapiente, quod voluptate velit doloremque explicabo tempora obcaecati quisquam.
+&lt;p&gt;I remember the first time I stumbled across Placehold.it, a simple image placeholder serving plain images with text indicating the width and height. Immediately, I wondered how the site was able to deliver images with the illusion they always existed on the server.&lt;/p&gt;
 
-&lt;img alt="Chartholdr pie graph" height="200px" width="200px" src="http://chartholdr.io/pie/200" /&gt;&lt;/p&gt;
+&lt;p&gt;A basic image placeholder could be made by generating the images once and leaving them on the server at the appropriate URL.&lt;/p&gt;
 
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus odit explicabo maxime quidem aliquid, nemo necessitatibus quis quisquam doloribus. Explicabo, impedit magnam perspiciatis tenetur quasi id praesentium esse, reprehenderit dolorem.&lt;/p&gt;
+&lt;p&gt;For instance, you could write a script that generates images between 1x1 and 1000x1000 and save them to the server's www/ folder. This would require no serverside logic, but it would be a huge waste of disk space, since there's a high chance most of the images will never be needed.&lt;/p&gt;
 
-&lt;h2 id="how-it-works"&gt;How it works&lt;/h2&gt;
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia ea fugiat eaque tempore, dicta sint. Deserunt officiis error dolorum quisquam autem inventore, illo ipsum voluptas repudiandae laborum perspiciatis illum, ea.&lt;/p&gt;
+&lt;p&gt;I can't attest to Placehold.it's serverside logic, but I can give a technical overview of how the image placeholder I built handles dynamic image rendering and serverside caching.
+&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class="language-ruby"&gt;it "will be correct size" do
-	pie_gen = Generator.new(Chart.new("pie", 400, 400))
-	FastImage.size(pie_gen.get)[0].should == 400
-	FastImage.size(pie_gen.get)[1].should == 400
-	bar_gen = Generator.new(Chart.new("bar", 505, 500))
-	FastImage.size(bar_gen.get)[0].should == 505
-	FastImage.size(bar_gen.get)[1].should == 500
-	line_gen = Generator.new(Chart.new("line", 700, 200))
-	FastImage.size(line_gen.get)[0].should == 700
-	FastImage.size(line_gen.get)[1].should == 200
-end
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="routes"&gt;Routes&lt;/h2&gt;
+&lt;p&gt;Taking advantage of the Ruby on Rails router, I grab the graph type, width, height (optional), and color (optional) all from one URL comprised of the following syntax.&lt;/p&gt;
 
-&lt;h2 id="challenges"&gt;Challenges&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;
+http://chartholdr.io/bar/1000/500/c=9d5ddd
+&lt;/code&gt;
+The routes.rb calls the Application Controller which initializes the generator object and sends the inline png file.&lt;/p&gt;
 
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid accusantium eius deleniti minima consectetur neque, architecto praesentium ipsa maxime a reiciendis libero omnis, quos facilis temporibus ratione quibusdam facere cupiditate.&lt;/p&gt;
+&lt;p&gt;The generator's constructor takes in the chart object so it knows which templates to use when rendering. If the image isn't already cached in the  public folder, the generator's get method initializes PhantomJS, renders the JS chart, saves the image to the public folder and then returns the file location.&lt;/p&gt;
+
+&lt;p&gt;Originally, I put most of the logic in the application controller. When I realized I wanted to generate multiple chart types, however, I decided to make the process modular. As you can tell, I took advantage of abstraction whenever I could.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Router ---&amp;gt; Application Controller ---&amp;gt; Generator ---&amp;gt; Chart&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id="rendering"&gt;Rendering&lt;/h2&gt;
+
+&lt;p&gt;I used Zurb's Pizza Amore pie library to generate the charts. While there are more sophisticated libraries out there such d3, I chose Pizza.js because it is lightweight and its simple charts are perfect for placeholder lorem ipsum.&lt;/p&gt;
+
+&lt;p&gt;I knew I needed a headless browser to generate the charts. PhantomJS was the obvious choice since it has built-in svg support as well as the ability to take screenshots.&lt;/p&gt;
+
+&lt;h2 id="caching"&gt;Caching&lt;/h2&gt;
+
+&lt;p&gt;I first thought about setting up an E3 database to go with my Elastic Beanstalk instance. But why use a database when I could just place the images in the public folder? So that's what I did.&lt;/p&gt;
+
+&lt;p&gt;Let's say I went to the url &lt;code&gt;localhost:3000/pie/300&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;If this image has not been generated before, the url is converted to a path and passed into PhantomJS where it will be saved to the public folder. If the image already exists, the application controller calls the send_data method and sends the image located at the converted url path, in this case, &lt;code&gt;public/pie/300/300&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id="the-source"&gt;The Source&lt;/h2&gt;
+
+&lt;p&gt;I had a blast working on this project, and I do have plans to continue working on it. If you'd like to contribute, the project is open source on &lt;a href="https://github.com/NoahHines/Chartholdr"&gt;github&lt;/a&gt;.&lt;/p&gt;
 
 </content>
   </entry>
@@ -53,8 +67,8 @@ end
     <title>Union Pacific Hackathon</title>
     <link rel="alternate" href="http://blog.url.com/2014/08/06/union-pacific-hackathon.html"/>
     <id>http://blog.url.com/2014/08/06/union-pacific-hackathon.html</id>
-    <published>2014-08-05T19:00:00-05:00</published>
-    <updated>2015-06-06T18:31:06-05:00</updated>
+    <published>2014-08-05T20:00:00-04:00</published>
+    <updated>2015-07-12T17:32:17-04:00</updated>
     <author>
       <name>Article Author</name>
     </author>
