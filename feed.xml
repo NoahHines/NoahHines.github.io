@@ -5,16 +5,50 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2015-07-11T20:00:00-04:00</updated>
+  <updated>2016-03-12T00:00:00-05:00</updated>
   <author>
     <name>Blog Author</name>
   </author>
   <entry>
+    <title>SpartaHack 2016</title>
+    <link rel="alternate" href="http://blog.url.com/2016/03/12/spartahack2016.html"/>
+    <id>http://blog.url.com/2016/03/12/spartahack2016.html</id>
+    <published>2016-03-12T00:00:00-05:00</published>
+    <updated>2016-04-30T19:18:10-04:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img alt="SpartaHack 2016 logo" src="/images/spartahack-logo.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Starting in September, I worked alongside 19 passionate MSU students to put on Michigan State University's second annual hackathon: SpartaHack. Working as a developer and designer, I attended weekly meetings with our organizing team, where we took turns presenting updates and discussing problems to solve as a group.&lt;/p&gt;
+
+&lt;p&gt;Although I considered myself an experienced hackathon attendee, I immediately felt lost as an organizer. Behind every hackathon, there are hard working volunteers who spends months working on an event that ends in just 36 hours. Without these volunteers, a hackathon wouldn't be the fun, safe, and educational experience every participant expects it to be. I don't think the participants realize this – but maybe that's a sign of a great hackathon.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id="my-work"&gt;My Work&lt;/h2&gt;
+
+&lt;p&gt;When I joined the team in September, the front-facing site was already complete. &lt;a href="http://www.austintruchan.net"&gt;Austin Truchan&lt;/a&gt;, a design grad student and SpartaHack 2015 designer, had already created the logo and homepage of the SpartaHack site. The last of the work was to be done on the admin pages: specifically, pages for managing submitted applications and viewing user statistics.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.bogdanpozderca.com"&gt;Bogdan Pozderca&lt;/a&gt; and I were the only web developers on the 2016 team. Together, we divided up the work, assigning issues on the github repo. Most of my work was on the Statistics page, where the SpartaHack organizers could view information about the applicants in a user-friendly manner.&lt;/p&gt;
+
+&lt;p&gt;The Statistics are broken up into three different views: Application, RSVP, and Attending.&lt;/p&gt;
+
+&lt;p&gt;The best part of the Statistics page was that it was constantly being updated through a process that closely mirrored agile development. Within two weeks, I had a working start that only showed the counts for the applications and the percentages for gender. This prototype continued to grow as new ideas were shared at each weekly meeting. Once we started accepting applicants, a new page was needed to specifically view the accepted applications. And eventually, I knew we'd need a page for the attending applicants, showing only the applicants who checked in the dat of the hackathon.&lt;/p&gt;
+
+&lt;p&gt;Rather than create three separate pages, I decided to filter the content with radio buttons. This is nice because it decreases the number of Parse requests and allows us to compare the data back and forth quickly. The backend of the Statistics page is done in its own rails controller, which passes javascript arrays to the front end, where d3 is used to make the content pretty.&lt;/p&gt;
+
+&lt;p&gt;Since the statistics page requires admin credentials, I’ve saved the page on my own site for anyone interested in viewing. &lt;a href="http://noahhines.com/spartahack/SpartaStats.html"&gt;http://NoahHines.com/spartahack/spartastats&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you're interested in the project, you can see the code on our public github repo here: &lt;a href="https://github.com/SpartaHack/SpartaHack2016-Website"&gt;SpartaHack2016&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>How Chartholdr Works</title>
     <link rel="alternate" href="http://blog.url.com/2015/07/12/chartholdr.html"/>
     <id>http://blog.url.com/2015/07/12/chartholdr.html</id>
-    <published>2015-07-11T20:00:00-04:00</published>
-    <updated>2015-07-26T15:08:39-04:00</updated>
+    <published>2015-07-12T00:00:00-04:00</published>
+    <updated>2016-04-30T17:09:39-04:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -67,7 +101,7 @@ The routes.rb calls the Application Controller which initializes the generator o
     <title>Union Pacific Hackathon</title>
     <link rel="alternate" href="http://blog.url.com/2014/08/06/union-pacific-hackathon.html"/>
     <id>http://blog.url.com/2014/08/06/union-pacific-hackathon.html</id>
-    <published>2014-08-05T20:00:00-04:00</published>
+    <published>2014-08-06T00:00:00-04:00</published>
     <updated>2015-07-12T17:32:17-04:00</updated>
     <author>
       <name>Article Author</name>
