@@ -5,20 +5,77 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2016-03-12T00:00:00-05:00</updated>
+  <updated>2016-04-30T00:00:00-04:00</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Electronic Art and Intermedia I &amp; Digital Fabrication I</title>
+    <link rel="alternate" href="http://blog.url.com/2016/04/30/electronic-art.html"/>
+    <id>http://blog.url.com/2016/04/30/electronic-art.html</id>
+    <published>2016-04-30T00:00:00-04:00</published>
+    <updated>2016-05-05T14:40:16-04:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;This spring semester, I was enrolled in two studio art classes for my graphic design minor.&lt;/p&gt;
+
+&lt;p&gt;The first class is Electronic Art and Intermedia I: a class which focuses on intermedia, digital tools, and how to…&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“develop an epistemic methodology by incorporating research, experimentation, experience and play into the art process.” (&lt;a href="http://adamwbrown.net/teaching-3/electronic-art"&gt;Adam Brown&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The second class is Digital Fabrication I: a project-based class which focuses on 3D modeling and fabrication techniques. In our Intermedia lab, we had access to a CNC milling machine, a CO2 laser cutter, and a 3D printer.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;Both of these classes were taught by Adam W. Brown, an Associate Professor at Michigan State University who created the Electronic Art &amp;amp; Intermedia study. Throughout the semester, Adam encouraged us to focus on topics we found interesting. My classmates created fantastic pieces based on topics ranging from religion, feminism, pop culture, and mythology. I chose to focus my work on science and technology: specifically, space travel.&lt;/p&gt;
+
+&lt;h2 id="apollo-11-sights-and-sounds"&gt;Apollo 11: Sights and Sounds&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="Apollo 11: Sights and Sounds cover" src="/images/art/apollo11-cover.png" /&gt;
+&amp;gt; Sights and Sounds is a mixed-media piece I made for my final project in Electronic Art and Intermedia I. The book as well as the audio is available for free download at &lt;a href="http://NoahHines.com/apollo"&gt;NoahHines.com/apollo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id="concept"&gt;Concept&lt;/h3&gt;
+
+&lt;p&gt;Adam asked the class to choose a location and create a physical book as well as a series of recorded sounds that relate to the location.&lt;/p&gt;
+
+&lt;p&gt;I spent less than a minute brainstorming locations. As soon as I considered the Moon, I fell in love with the idea. I have always been fascinated with NASA’s Apollo missions, but I hadn’t done extensive research about the missions. I chose the Apollo 11 mission because of the historical significance of being the first manned lunar landing.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;My goal with the book was to create an immersive experience for the reader, where he/she can see and hear what Neil Armstrong and Buzz Aldrin experienced in July 1969.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id="the-book"&gt;The Book&lt;/h3&gt;
+&lt;p&gt;The book was printed at the Michigan State University Library with the &lt;a href="https://www.lib.msu.edu/ebm/"&gt;Espresso Book Machine (EBM)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id="the-audio"&gt;The Audio&lt;/h3&gt;
+&lt;p&gt;The audio was created using GarageBand to arrange the archived sound files and Logic to master the final 20-minute track.&lt;/p&gt;
+
+&lt;h2 id="the-updated-pioneer-plaque"&gt;The Updated Pioneer Plaque&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="Pioneer Plaque" src="/images/art/pioneer-plaque.jpg" /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The original Pioneer plaque is a gold-anodized aluminium plaque placed on board the 1972 Pioneer 10 and 1973 Pioneer 11 spacecraft, featuring a pictorial message describing the the location of Earth and the anatomy of human lifeforms.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img alt="Pioneer Plaque" src="/images/art/updated-pioneer-plaque.png" /&gt;&lt;/p&gt;
+
+&lt;h3 id="concept-1"&gt;Concept&lt;/h3&gt;
+&lt;p&gt;I’ve always been fascinated with the messages humans have sent out into space. The issue I have with the pioneer plaque is that it doesn’t portray the average human. The perfect bodies portrayed in Carl Sagan’s original design, do not reflect the average human anatomy.&lt;/p&gt;
+
+</content>
+  </entry>
   <entry>
     <title>SpartaHack 2016</title>
     <link rel="alternate" href="http://blog.url.com/2016/03/12/spartahack2016.html"/>
     <id>http://blog.url.com/2016/03/12/spartahack2016.html</id>
     <published>2016-03-12T00:00:00-05:00</published>
-    <updated>2016-04-30T19:18:10-04:00</updated>
+    <updated>2016-05-04T19:01:50-04:00</updated>
     <author>
       <name>Article Author</name>
     </author>
-    <content type="html">&lt;p&gt;&lt;img alt="SpartaHack 2016 logo" src="/images/spartahack-logo.png" /&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img alt="SpartaHack 2016 logo" src="/images/spartahack-logo-small.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Starting in September, I worked alongside 19 passionate MSU students to put on Michigan State University's second annual hackathon: SpartaHack. Working as a developer and designer, I attended weekly meetings with our organizing team, where we took turns presenting updates and discussing problems to solve as a group.&lt;/p&gt;
 
@@ -48,7 +105,7 @@
     <link rel="alternate" href="http://blog.url.com/2015/07/12/chartholdr.html"/>
     <id>http://blog.url.com/2015/07/12/chartholdr.html</id>
     <published>2015-07-12T00:00:00-04:00</published>
-    <updated>2016-04-30T17:09:39-04:00</updated>
+    <updated>2016-05-04T19:01:45-04:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -102,7 +159,7 @@ The routes.rb calls the Application Controller which initializes the generator o
     <link rel="alternate" href="http://blog.url.com/2014/08/06/union-pacific-hackathon.html"/>
     <id>http://blog.url.com/2014/08/06/union-pacific-hackathon.html</id>
     <published>2014-08-06T00:00:00-04:00</published>
-    <updated>2015-07-12T17:32:17-04:00</updated>
+    <updated>2016-05-01T20:05:44-04:00</updated>
     <author>
       <name>Article Author</name>
     </author>
