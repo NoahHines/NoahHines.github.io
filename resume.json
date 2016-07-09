@@ -1,0 +1,165 @@
+{
+  "basics": {
+    "name": "Noah Hines",
+    "label": "Student & Developer",
+    "picture": "https://dl.dropboxusercontent.com/u/717136/photo.jpg",
+    "email": "hinesnoa@msu.edu",
+    "phone": "(616) 916-8722",
+    "website": "http://NoahHines.com",
+    "summary": "I am an innovative and entrepreneurial senior at Michigan State University seeking an internship with a leading tech company.",
+    "location": {
+      "address": "350 Greentree LN",
+      "postalCode": "MI 49301",
+      "city": "Ada",
+      "countryCode": "US",
+      "region": "Michigan"
+    },
+    "profiles": [
+      {
+        "network": "Personal Site",
+        "username": "",
+        "url": "http://NoahHines.com"
+      },
+      {
+        "network": "GitHub",
+        "username": "NoahHines",
+        "url": "http://github.com/NoahHines"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "Apple Inc.",
+      "position": "Software Engineering Intern",
+      "website": "",
+      "startDate": "May 2016",
+      "endDate": "Aug 2016",
+      "summary": "Media Apps team working on Apple Music."
+    },
+    {
+      "company": "General Mills",
+      "position": "App Developer Intern",
+      "website": "",
+      "startDate": "May 2015",
+      "endDate": "Aug 2015",
+      "summary": "I wrote a C# .NET web application with an AngularJS SPA front end for managing and planning internal conferences at GMI."
+    },
+    {
+      "company": "Michigan State University REHS",
+      "position": "Resident Assistant",
+      "website": "",
+      "startDate": "Aug 2014",
+      "endDate": "Present",
+      "summary": "As an RA at MSU, I promote academic excellence, address residents' needs, and encourage participation in the MSU community."
+    },
+    {
+      "company": "Web Startup",
+      "position": "'The Hatch'",
+      "website": "",
+      "startDate": "Sep 2013",
+      "endDate": "May 2015",
+      "summary": "In September 2013, I partnered with students to form BrainStorm Trust, a freelance web startup to develop web presence and front/back end for start-ups."
+    },
+    {
+      "company": "Union Pacific",
+      "position": "IT Intern",
+      "website": "",
+      "startDate": "May 2014",
+      "endDate": "Aug 2014",
+      "summary": "As a member of the User Experience team, I lead a project to develop an in-house iBeacon pinging system which included a Phonegap plugin for Android & iOS."
+    }
+  ],
+  "education": [
+    {
+      "institution": "Michigan State University",
+      "area": "Computer Science Engineering with Graphic Design minor",
+      "studyType": "Bachelor",
+      "startDate": "August 2012",
+      "endDate": "December 2016",
+      "gpa": "",
+      "courses": [
+        "CSE 260: Discrete Structures in Computer Science",
+        "CSE 320: Computer Organization and Architecture",
+        "CSE 335: Object-Oriented Software Development",
+        "CSE 331: Algorithms and Data Structures",
+        "CSE 410: Operating Systems",
+        "CSE 477: Web Architechure",
+        "CSE 491: Introduction to Biometrics",
+        "CSE 491: Computational Techniques for Large-Scale Data Analysis",
+        "CSE 491: Algorithm Engineering"
+      ]
+    }
+  ],
+  "interests": [
+    {
+      "name": "Software Development"
+    },
+    {
+      "name": "Mobile Tech"
+    },
+    {
+      "name": "User Experience"
+    },
+    {
+      "name": "Tech Startups"
+    },
+    {
+      "name": "Computer Graphics"
+    },
+    {
+      "name": "Music"
+    },
+    {
+      "name": "The Outdoors"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Union Pacific 2015 Hackathon",
+      "awarder": "Union Pacific",
+      "summary": "Won 2nd place for creating a track safety system with a raspberry pi and software-defined radio."
+    },
+    {
+      "title": "Boy Scouts of America",
+      "awarder": "",
+      "summary": "Achieved Eagle rank and OA honors in Boy Scout Troop 334 of Cascade, MI."
+    },
+    {
+      "title": "Odyssey of the Mind",
+      "awarder": "",
+      "summary": "Won 1st place at regional and state levels and placed in top 10 at world competition. Have continued to volunteer as a judge for 4 years."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Front-end",
+      "keywords": [
+        "AngularJS",
+        "Javascript",
+        "HTML5",
+        "Sass/LESS",
+        "CSS3"
+      ]
+    },
+    {
+      "name": "Back-end",
+      "keywords": [
+        "C# ASP.NET MVC",
+        "Ruby on Rails",
+        "C++",
+        "C",
+        "PHP",
+        "Python"
+      ]
+    },
+    {
+      "name": "Design",
+      "keywords": [
+        "Illustrator",
+        "Photoshop",
+        "After Effects",
+        "Autodesk"
+      ]
+    }
+  ]
+}

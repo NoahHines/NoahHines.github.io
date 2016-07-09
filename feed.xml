@@ -5,7 +5,7 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2016-04-30T00:00:00-04:00</updated>
+  <updated>2016-04-29T21:00:00-07:00</updated>
   <author>
     <name>Blog Author</name>
   </author>
@@ -13,8 +13,8 @@
     <title>Electronic Art and Intermedia I &amp; Digital Fabrication I</title>
     <link rel="alternate" href="http://blog.url.com/2016/04/30/electronic-art.html"/>
     <id>http://blog.url.com/2016/04/30/electronic-art.html</id>
-    <published>2016-04-30T00:00:00-04:00</published>
-    <updated>2016-05-05T14:40:16-04:00</updated>
+    <published>2016-04-29T21:00:00-07:00</published>
+    <updated>2016-05-05T11:40:16-07:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -70,8 +70,8 @@
     <title>SpartaHack 2016</title>
     <link rel="alternate" href="http://blog.url.com/2016/03/12/spartahack2016.html"/>
     <id>http://blog.url.com/2016/03/12/spartahack2016.html</id>
-    <published>2016-03-12T00:00:00-05:00</published>
-    <updated>2016-05-04T19:01:50-04:00</updated>
+    <published>2016-03-11T21:00:00-08:00</published>
+    <updated>2016-05-04T16:01:50-07:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -104,8 +104,8 @@
     <title>How Chartholdr Works</title>
     <link rel="alternate" href="http://blog.url.com/2015/07/12/chartholdr.html"/>
     <id>http://blog.url.com/2015/07/12/chartholdr.html</id>
-    <published>2015-07-12T00:00:00-04:00</published>
-    <updated>2016-05-04T19:01:45-04:00</updated>
+    <published>2015-07-11T21:00:00-07:00</published>
+    <updated>2016-05-04T16:01:45-07:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -158,8 +158,8 @@ The routes.rb calls the Application Controller which initializes the generator o
     <title>Union Pacific Hackathon</title>
     <link rel="alternate" href="http://blog.url.com/2014/08/06/union-pacific-hackathon.html"/>
     <id>http://blog.url.com/2014/08/06/union-pacific-hackathon.html</id>
-    <published>2014-08-06T00:00:00-04:00</published>
-    <updated>2016-05-01T20:05:44-04:00</updated>
+    <published>2014-08-05T21:00:00-07:00</published>
+    <updated>2016-05-01T17:05:44-07:00</updated>
     <author>
       <name>Article Author</name>
     </author>
